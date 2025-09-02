@@ -8,12 +8,12 @@ pipeline {
 
   stages{
     stage('Git Clone'){
-      steps{
-        git url:'https://github.com/pgw123123/spring-petclinic.git', branch: 'main'
+      steps {
+        git url: 'https://github.com/sjh4616/spring-petclinic.git', branch: 'main'
       }
     }
     stage('Maven Build'){
-      steps{
+      steps {
         sh 'mvn -Dmaven.test.failure.ignore=true clean package'
       }
     }
