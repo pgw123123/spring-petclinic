@@ -39,12 +39,12 @@ pipeline {
       }
     }
     stage('Docker Image Remove') {
-      step {
+      steps {
         sh 'docker rmi gw9965/spring-petclinic:$BUILD_NUMBER gw9965/spring-petclinic:latest'
       }
     }
     stage('Publish Over SSH') {
-      step{
+      steps{
         sshPublisher(publishers: [sshPublisherDesc(configName: 'target', 
         transfers: [sshTransfer(cleanRemote: false, 
         excludes: '', 
