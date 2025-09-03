@@ -18,9 +18,9 @@ pipeline {
       }
     }
     stage('Docker Image Create'){
-      steps{
+      steps {
         sh """
-        docker build -t gw9965/spring-petclinic:$BUILD_NUMER .
+        docker build -t gw9965/spring-petclinic:$BUILD_NUMBER .
         docker tag gw9965/spring-petclinic:$BUILD_NUMBER gw9965/spring-petclinic:latest
         """
       }
